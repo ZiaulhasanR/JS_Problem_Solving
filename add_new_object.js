@@ -14,3 +14,11 @@ let array1=[
     {"name": "Vivo Y75s", "price": 256, "brand": "vivo", "rating": {"average": "4.1", "user_count": 43}, "discount": "16%"},
     {"name": "Vivo iQOO 9T", "price": 476, "brand": "vivo", "rating": {"average": "4.5", "user_count": 134}, "discount": "20%"}
   ];
+
+  let array2= array1.map((addobj)=>{
+    let dicountPrice= addobj.price*((parseInt)(addobj.discount)/100);
+    
+    addobj['discounted_price']=(addobj.price-dicountPrice).toFixed(2);
+    return addobj;
+  })
+  console.log(array2);
